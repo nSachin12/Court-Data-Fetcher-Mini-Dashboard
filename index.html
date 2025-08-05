@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Court Data Fetcher</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <h1>Court Data Fetcher - Delhi High Court</h1>
+
+        <h3>Get Captcha From Here: <a href="https://delhihighcourt.nic.in/app/get-case-type-status" target="_blank" rel="noopener noreferrer">Click Here</a></h3>        <form id="caseForm" action="/fetch_case" method="POST">
+            <label for="case_type">Case Type:</label>
+            <select id="case_type" name="case_type" required>
+                <option value="W.P.(C)">W.P.(C)</option>
+                <option value="CRL.M.C.">CRL.M.C.</option>
+                <option value="BAIL APPLN.">BAIL APPLN.</option>
+                <!-- Update with exact options from eCourts dropdown -->
+            </select>
+            <label for="case_number">Case Number:</label>
+            <input type="text" id="case_number" name="case_number" required>
+            <label for="filing_year">Filing Year:</label>
+            <input type="number" id="filing_year" name="filing_year" min="1900" max="2025" required>
+            <label for="captcha">CAPTCHA (from eCourts site):</label>
+            <input type="text" id="captcha" name="captcha" required>
+            <button type="submit">Fetch Case</button>
+        </form>
+        <div id="result">
+            <h2>Case Details</h2>
+            <p id="error" style="color: red;"></p>
+            <p><strong>Parties:</strong> <span id="parties"></span></p>
+            <p><strong>Filing Date:</strong> <span id="filing_date"></span></p>
+            <p><strong>Next Hearing:</strong> <span id="next_hearing"></span></p>
+            <p><strong>Latest Order:</strong> <a id="order_link" href="#" target="_blank">Download PDF</a></p>
+        </div>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

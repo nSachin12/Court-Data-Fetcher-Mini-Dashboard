@@ -1,0 +1,40 @@
+Case Types and Test Cases
+
+W.P.(C) - Writ Petition (Civil)
+
+Test Case 1: case_type=W.P.(C), case_number=6457, filing_year=2023
+
+Expected: Should return details like "GOVT OF NCT OF DELHI VS. JYOTSNA GOSA" with next hearing "13/10/2025".
+
+
+Test Case 2: case_type=W.P.(C), case_number=1234, filing_year=2022
+
+Expected: Likely "No case found or invalid input" unless this case exists; use to test error handling.
+
+
+
+
+CRL.M.C. - Criminal Miscellaneous Case
+
+Test Case 1: case_type=CRL.M.C., case_number=9876, filing_year=2023
+
+Expected: May return details if a valid case; otherwise, expect "No case found" to test different case type retrieval.
+
+
+Test Case 2: case_type=CRL.M.C., case_number=5555, filing_year=2021
+
+Expected: Test with an older year to check if the app handles historical cases or returns an error.
+
+
+
+
+BAIL APPLN. - Bail Application
+
+Test Case 1: case_type=BAIL APPLN., case_number=4321, filing_year=2024
+
+Expected: Could return bail-related details if valid; otherwise, test error response.
+
+
+Test Case 2: case_type=BAIL APPLN., case_number=1111, filing_year=2023
+
+Expected: Another test to ensure the app processes different case numbers correctly.
